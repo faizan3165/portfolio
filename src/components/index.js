@@ -2,5 +2,6 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Loader from "./Loader";
 import HomeInfo from "./HomeInfo";
+import Alert from "./Alert";
 
-export { Navbar, Footer, Loader, HomeInfo };
+export { Navbar, Footer, Loader, HomeInfo, Alert };
