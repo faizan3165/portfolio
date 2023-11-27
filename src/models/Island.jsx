@@ -57,12 +57,12 @@ export function Island({
       if (!isRotating) setIsRotating(true);
 
       islandRef.current.rotation.y += 0.005 * Math.PI;
-      rotationSpeed.current = 0.007;
+      rotationSpeed.current = 0.00125;
     } else if (e.key === "ArrowRight") {
       if (!isRotating) setIsRotating(true);
 
+      rotationSpeed.current = -0.00125;
       islandRef.current.rotation.y -= 0.005 * Math.PI;
-      rotationSpeed.current = -0.007;
     }
   };
 
@@ -72,22 +72,85 @@ export function Island({
     }
   };
 
+  const handleTouchStart = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    if (e.touches.length === 1) {
+      setIsRotating(true);
+
+      const clientX = e.touches[0].clientX;
+      lastX.current = clientX;
+    }
+  };
+
+  const handleTouchEnd = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setIsRotating(false);
+  };
+
+  const handleTouchMove = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    if (isRotating && e.touches.length === 1) {
+      const clientX = e.touches[0].clientX;
+      const delta = (clientX - lastX.current) / viewport.width;
+
+      islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+      lastX.current = clientX;
+
+      rotationSpeed.current = delta * 0.01 * Math.PI;
+    }
+  };
+
+  const handleOrientationChange = () => {
+    if (window.innerWidth < window.innerHeight) {
+      // Portrait orientation
+      islandRef.current.rotation.y = 0; // Reset rotation for portrait mode
+    } else {
+      // Landscape orientation
+      const rotation = islandRef.current.rotation.y;
+      const normalizedRotation =
+        ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+
+      // Adjust the rotation based on the current stage or other logic as needed
+      switch (true) {
+        case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
+          setCurrentStage(4);
+          break;
+
+        case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
+          setCurrentStage(3);
+          break;
+
+        // Add more cases for other stages as needed
+
+        default:
+          setCurrentStage(null);
+      }
+    }
+  };
+
   useEffect(() => {
     const canvas = gl.domElement;
-    canvas.addEventListener("pointerdown", handlePointerDown);
-    canvas.addEventListener("pointerup", handlePointerUp);
-    canvas.addEventListener("pointermove", handlePointerMove);
+    canvas.addEventListener("touchstart", handleTouchStart, { passive: false });
+    canvas.addEventListener("touchend", handleTouchEnd);
+    canvas.addEventListener("touchmove", handleTouchMove, { passive: false });
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
+    window.addEventListener("orientationchange", handleOrientationChange);
 
     return () => {
-      canvas.removeEventListener("pointerdown", handlePointerDown);
-      canvas.removeEventListener("pointerup", handlePointerUp);
-      canvas.removeEventListener("pointermove", handlePointerMove);
+      canvas.removeEventListener("touchstart", handleTouchStart);
+      canvas.removeEventListener("touchend", handleTouchEnd);
+      canvas.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
+      window.removeEventListener("orientationchange", handleOrientationChange);
     };
-  }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
+  }, [gl, handleTouchStart, handleTouchEnd, handleTouchMove]);
 
   useFrame(() => {
     if (!isRotating) {
