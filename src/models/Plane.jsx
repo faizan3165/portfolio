@@ -9,6 +9,17 @@ export const Plane = ({ isRotating, ...props }) => {
   const { scene, animations } = useGLTF(planeScene);
   const { actions } = useAnimations(animations, ref);
 
+  let screenScale = null,
+    screenPosition = null;
+
+  if (window.innerWidth < 768) {
+    screenScale = [1.5, 1.5, 1.5];
+    screenPosition = [10, -1.5, 0];
+  } else {
+    screenScale = [3, 3, 3];
+    screenPosition = [0, -4, -4];
+  }
+
   useEffect(() => {
     if (isRotating) {
       actions["Take 001"].play();
@@ -18,7 +29,7 @@ export const Plane = ({ isRotating, ...props }) => {
   }, [actions, isRotating]);
 
   return (
-    <mesh {...props} ref={ref}>
+    <mesh {...props} ref={ref} position={screenPosition} scale={screenScale}>
       <primitive object={scene} />
     </mesh>
   );
