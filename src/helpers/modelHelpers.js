@@ -13,8 +13,7 @@ export const adjustIslandForScreenSize = () => {
 };
 
 export const adjustPlaneForScreenSize = () => {
-  let screenScale = null,
-    screenPosition = null;
+  let screenScale, screenPosition;
 
   if (window.innerWidth < 768) {
     screenScale = [1.5, 1.5, 1.5];
