@@ -4,5 +4,18 @@ import Loader from "./Loader";
 import HomeInfo from "./HomeInfo";
 import Alert from "./Alert";
 import CTA from "./CTA";
+import Intro from "./about/Intro";
+import Skills from "./about/Skills";
+import Experience from "./about/Experience";
 
-export { Navbar, Footer, Loader, HomeInfo, Alert, CTA };
+export {
+  Navbar,
+  Footer,
+  Loader,
+  HomeInfo,
+  Alert,
+  CTA,
+  Intro,
+  Skills,
+  Experience,
+};
