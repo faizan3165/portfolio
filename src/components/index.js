@@ -7,6 +7,8 @@ import CTA from "./CTA";
 import Intro from "./about/Intro";
 import Skills from "./about/Skills";
 import Experience from "./about/Experience";
+import ProjectsIntro from "./projects/Intro";
+import Work from "./projects/Work";
 
 export {
   Navbar,
@@ -18,4 +20,6 @@ export {
   Intro,
   Skills,
   Experience,
+  ProjectsIntro,
+  Work
 };
