@@ -24,6 +24,7 @@ import {
   typescript,
   angular,
   ror,
+  postgres,
 } from "../assets/icons";
 
 export const skills = [
@@ -66,6 +67,12 @@ export const skills = [
   {
     imageUrl: mongodb,
     name: "MongoDB",
+    type: "Database",
+  },
+
+  {
+    imageUrl: postgres,
+    name: "PostgreSQL",
     type: "Database",
   },
 

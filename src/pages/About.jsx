@@ -8,7 +8,6 @@ import { skills, experiences } from "../constants";
 import { CTA } from "../components/";
 
 import "react-vertical-timeline-component/style.min.css";
-import "react-tooltip/dist/react-tooltip.css";
 
 const About = () => {
   return (
@@ -40,7 +39,7 @@ const About = () => {
             >
               <div className="btn-back rounded-xl" />
 
-              <p
+              <div
                 data-tooltip-id="icon-name"
                 data-tooltip-content={`${skill.name} - ${skill.type}`}
               >
@@ -51,9 +50,9 @@ const About = () => {
                     className="w-1/2 h-1/2 object-contain"
                   />
                 </div>
-              </p>
+              </div>
 
-              <Tooltip id="icon-name" className="rounded-full bg-red-900" />
+              <Tooltip id="icon-name" style={{ borderRadius: "1.5rem" }} />
             </div>
           ))}
         </div>

@@ -25,7 +25,8 @@ import contact from "./contact.svg";
 import soundon from "./soundon.png";
 import soundoff from "./soundoff.png";
 import angular from "./angular.png";
-import ror from './ror.png';
+import ror from "./ror.png";
+import postgres from "./postgres.png";
 
 export {
   css,
@@ -55,5 +56,6 @@ export {
   soundon,
   soundoff,
   angular,
-  ror
+  ror,
+  postgres
 };
