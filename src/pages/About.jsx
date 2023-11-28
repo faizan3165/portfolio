@@ -2,11 +2,13 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
+import { Tooltip } from "react-tooltip";
 
 import { skills, experiences } from "../constants";
 import { CTA } from "../components/";
 
 import "react-vertical-timeline-component/style.min.css";
+import "react-tooltip/dist/react-tooltip.css";
 
 const About = () => {
   return (
@@ -38,13 +40,20 @@ const About = () => {
             >
               <div className="btn-back rounded-xl" />
 
-              <div className="btn-front rounded-xl flex justify-center items-center">
-                <img
-                  src={skill.imageUrl}
-                  alt={skill.name}
-                  className="w-1/2 h-1/2 object-contain"
-                />
-              </div>
+              <p
+                data-tooltip-id="icon-name"
+                data-tooltip-content={`${skill.name} - ${skill.type}`}
+              >
+                <div className="btn-front rounded-xl flex justify-center items-center">
+                  <img
+                    src={skill.imageUrl}
+                    alt={skill.name}
+                    className="w-1/2 h-1/2 object-contain"
+                  />
+                </div>
+              </p>
+
+              <Tooltip id="icon-name" className="rounded-full bg-red-900" />
             </div>
           ))}
         </div>
@@ -77,7 +86,7 @@ const About = () => {
                     <img
                       src={experience.icon}
                       alt={experience.company_name}
-                      className="w-[60%] h-[60%] object-contain"
+                      className="w-[90%] h-[90%] object-contain"
                     />
                   </div>
                 }
