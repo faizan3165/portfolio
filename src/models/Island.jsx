@@ -105,34 +105,6 @@ export function Island({
     }
   };
 
-  const handleOrientationChange = () => {
-    if (window.innerWidth < window.innerHeight) {
-      // Portrait orientation
-      islandRef.current.rotation.y = 0; // Reset rotation for portrait mode
-    } else {
-      // Landscape orientation
-      const rotation = islandRef.current.rotation.y;
-      const normalizedRotation =
-        ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
-
-      // Adjust the rotation based on the current stage or other logic as needed
-      switch (true) {
-        case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
-          setCurrentStage(4);
-          break;
-
-        case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
-          setCurrentStage(3);
-          break;
-
-        // Add more cases for other stages as needed
-
-        default:
-          setCurrentStage(null);
-      }
-    }
-  };
-
   useEffect(() => {
     const canvas = gl.domElement;
     canvas.addEventListener("touchstart", handleTouchStart, { passive: false });
@@ -143,7 +115,6 @@ export function Island({
     canvas.addEventListener("pointermove", handlePointerMove);
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
-    window.addEventListener("orientationchange", handleOrientationChange);
 
     return () => {
       canvas.removeEventListener("touchstart", handleTouchStart);
@@ -154,7 +125,6 @@ export function Island({
       canvas.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
-      window.removeEventListener("orientationchange", handleOrientationChange);
     };
   }, [gl, handleTouchStart, handleTouchEnd, handleTouchMove]);
 

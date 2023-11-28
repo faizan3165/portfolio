@@ -9,12 +9,11 @@ export const Plane = ({ isRotating, ...props }) => {
   const { scene, animations } = useGLTF(planeScene);
   const { actions } = useAnimations(animations, ref);
 
-  let screenScale = null,
-    screenPosition = null;
+  let screenScale, screenPosition;
 
   if (window.innerWidth < 768) {
     screenScale = [1.5, 1.5, 1.5];
-    screenPosition = [10, -1.5, 0];
+    screenPosition = [0, -1.5, 0];
   } else {
     screenScale = [3, 3, 3];
     screenPosition = [0, -4, -4];
