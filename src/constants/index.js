@@ -182,14 +182,14 @@ export const socialLinks = [
 ];
 
 export const projects = [
-  {
-    iconUrl: pricewise,
-    theme: "btn-back-red",
-    name: "Car Info App",
-    description:
-      "Developed a web application that shows information for different cars.",
-    link: "https://car-vault.vercel.app",
-  },
+  // {
+  //   iconUrl: pricewise,
+  //   theme: "btn-back-red",
+  //   name: "Car Info App",
+  //   description:
+  //     "Developed a web application that shows information for different cars.",
+  //   link: "https://car-vault.vercel.app",
+  // },
 
   // {
   //   iconUrl: threads,
@@ -205,8 +205,8 @@ export const projects = [
     theme: "btn-back-blue",
     name: "Car Finding App",
     description:
-      "Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.",
-    link: "https://github.com/adrianhajdin/project_next13_car_showcase",
+      "Designed and built a web app for finding and comparing cars on the market, streamlining the car-buying process.",
+    link: "https://car-vault.vercel.app",
   },
 
   // {
