@@ -27,6 +27,7 @@ import soundoff from "./soundoff.png";
 import angular from "./angular.png";
 import ror from "./ror.png";
 import postgres from "./postgres.png";
+import blog from "./blog.svg";
 
 export {
   css,
@@ -57,5 +58,6 @@ export {
   soundoff,
   angular,
   ror,
-  postgres
+  postgres,
+  blog
 };

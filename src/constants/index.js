@@ -25,6 +25,7 @@ import {
   angular,
   ror,
   postgres,
+  blog,
 } from "../assets/icons";
 
 export const skills = [
@@ -207,6 +208,15 @@ export const projects = [
     description:
       "Designed and built a web app for finding and comparing cars on the market, streamlining the car-buying process.",
     link: "https://car-vault.vercel.app",
+  },
+
+  {
+    iconUrl: blog,
+    theme: "btn-back-pink",
+    name: "Blog Posting App",
+    description:
+      "Built a web application for users to create an blog posts and sort them categorically, allowing them to converse through comments",
+    link: "https://nextjs-blog-app-ten.vercel.app/",
   },
 
   // {
