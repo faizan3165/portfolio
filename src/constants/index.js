@@ -26,6 +26,7 @@ import {
   ror,
   postgres,
   blog,
+  plane,
 } from "../assets/icons";
 
 export const skills = [
@@ -217,6 +218,15 @@ export const projects = [
     description:
       "Built a web application for users to create an blog posts and sort them categorically, allowing them to converse through comments",
     link: "https://nextjs-blog-app-ten.vercel.app/",
+  },
+
+  {
+    iconUrl: plane,
+    theme: "btn-back-red",
+    name: "Airline Ticketing App",
+    description:
+      "Built a full stack web app for air ticket bookings. With a sleek interface and user-friendly design, we simplify the process of finding, comparing, and securing the best flight deals for your dream destinations.",
+    link: "https://alibrahimtravels.netlify.app/",
   },
 
   // {

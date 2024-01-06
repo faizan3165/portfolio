@@ -28,6 +28,7 @@ import angular from "./angular.png";
 import ror from "./ror.png";
 import postgres from "./postgres.png";
 import blog from "./blog.svg";
+import plane from "./plane.svg";
 
 export {
   css,
@@ -59,5 +60,6 @@ export {
   angular,
   ror,
   postgres,
-  blog
+  blog,
+  plane,
 };
