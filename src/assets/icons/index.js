@@ -29,6 +29,8 @@ import ror from "./ror.png";
 import postgres from "./postgres.png";
 import blog from "./blog.svg";
 import plane from "./plane.svg";
+import imaginify from "./imaginify.png";
+import ligma from "./ligma.png";
 
 export {
   css,
@@ -62,4 +64,6 @@ export {
   postgres,
   blog,
   plane,
+  imaginify,
+  ligma,
 };

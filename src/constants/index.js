@@ -27,6 +27,8 @@ import {
   postgres,
   blog,
   plane,
+  imaginify,
+  ligma,
 } from "../assets/icons";
 
 export const skills = [
@@ -255,4 +257,22 @@ export const projects = [
   //     "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
   //   link: "https://github.com/adrianhajdin/project_ai_summarizer",
   // },
+
+  {
+    iconUrl: imaginify,
+    theme: "btn-back-pink",
+    name: "AI Image SAAS Application",
+    description:
+      "A Software as a Service app that uses AI to generate and edit images.",
+    link: "https://imaginifyy.vercel.app/",
+  },
+
+  {
+    iconUrl: ligma,
+    theme: "btn-back-yellow",
+    name: "Ligma",
+    description:
+      "Built a figma clone with all major features for designers to use easily.",
+    link: "https://ligmaa.vercel.app/",
+  },
 ];
