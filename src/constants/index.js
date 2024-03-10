@@ -29,6 +29,8 @@ import {
   plane,
   imaginify,
   ligma,
+  nike,
+  ruby,
 } from "../assets/icons";
 
 export const skills = [
@@ -66,6 +68,12 @@ export const skills = [
     imageUrl: javascript,
     name: "JavaScript",
     type: "Frontend",
+  },
+
+  {
+    imageUrl: ruby,
+    name: "Ruby",
+    type: "Backend",
   },
 
   {
@@ -187,21 +195,30 @@ export const socialLinks = [
 
 export const projects = [
   // {
-  //   iconUrl: pricewise,
-  //   theme: "btn-back-red",
-  //   name: "Car Info App",
-  //   description:
-  //     "Developed a web application that shows information for different cars.",
-  //   link: "https://car-vault.vercel.app",
-  // },
-
-  // {
   //   iconUrl: threads,
   //   theme: "btn-back-green",
   //   name: "Full Stack Threads Clone",
   //   description:
   //     'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
   //   link: "https://github.com/adrianhajdin/threads",
+  // },
+
+  // {
+  //   iconUrl: snapgram,
+  //   theme: "btn-back-pink",
+  //   name: "Full Stack Instagram Clone",
+  //   description:
+  //     "Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.",
+  //   link: "https://github.com/adrianhajdin/social_media_app",
+  // },
+
+  // {
+  //   iconUrl: summiz,
+  //   theme: "btn-back-yellow",
+  //   name: "AI Summarizer Application",
+  //   description:
+  //     "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
+  //   link: "https://github.com/adrianhajdin/project_ai_summarizer",
   // },
 
   {
@@ -231,15 +248,6 @@ export const projects = [
     link: "https://alibrahimtravels.netlify.app/",
   },
 
-  // {
-  //   iconUrl: snapgram,
-  //   theme: "btn-back-pink",
-  //   name: "Full Stack Instagram Clone",
-  //   description:
-  //     "Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.",
-  //   link: "https://github.com/adrianhajdin/social_media_app",
-  // },
-
   {
     iconUrl: estate,
     theme: "btn-back-black",
@@ -248,15 +256,6 @@ export const projects = [
       "Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.",
     link: "https://property-prowess.vercel.app/",
   },
-
-  // {
-  //   iconUrl: summiz,
-  //   theme: "btn-back-yellow",
-  //   name: "AI Summarizer Application",
-  //   description:
-  //     "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
-  //   link: "https://github.com/adrianhajdin/project_ai_summarizer",
-  // },
 
   {
     iconUrl: imaginify,
@@ -274,5 +273,14 @@ export const projects = [
     description:
       "Built a figma clone with all major features for designers to use easily.",
     link: "https://ligmaa.vercel.app/",
+  },
+
+  {
+    iconUrl: nike,
+    theme: "btn-back-red",
+    name: "Nike",
+    description:
+      "Redesigned the nike online store with a modern look and feel.",
+    link: "https://nike-store-pi-one.vercel.app/",
   },
 ];

@@ -4,6 +4,7 @@ import git from "./git.svg";
 import github from "./github.svg";
 import html from "./html.svg";
 import javascript from "./javascript.svg";
+import ruby from "./ruby.png";
 import mongodb from "./mongodb.svg";
 import mui from "./mui.svg";
 import nextjs from "./nextjs.svg";
@@ -31,6 +32,7 @@ import blog from "./blog.svg";
 import plane from "./plane.svg";
 import imaginify from "./imaginify.png";
 import ligma from "./ligma.png";
+import nike from "./nike.png";
 
 export {
   css,
@@ -39,6 +41,7 @@ export {
   github,
   html,
   javascript,
+  ruby,
   mongodb,
   mui,
   nextjs,
@@ -66,4 +69,5 @@ export {
   plane,
   imaginify,
   ligma,
+  nike,
 };
